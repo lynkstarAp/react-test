@@ -3,12 +3,15 @@ import "./style.css";
 import data from "../../data/login.json";
 import "bootstrap/dist/css/bootstrap.min.css";
 import avatar from '../../images/avatar.jpg'
+import {useHistory} from "react-router-dom"
 
 export default function Login() {
     const [userLogin, setUsetLogin] = useState(data);
     const [results, setResults] = useState([]);
     const [userUser, setUserUser] = useState("");
     const [userPass, setUserPass] = useState("");
+
+    const history = useHistory();
 
     useEffect(() => {
 
@@ -22,13 +25,15 @@ export default function Login() {
             const filteredDatauserData = userLogin.filter((value) => {
                 return (
                     value.user.toLowerCase().includes(searchUserMin) &&
-                    value.password.toLowerCase().includes(searchPass)
+                    value.password.toLowerCase().includes(searchPassMin)
                 );
             });
             setResults(filteredDatauserData);
             if(results?.length){
-                // console.log(filteredDatauserData)
-                alert("Inicio exitoso")
+                alert("Inicio de sesion exitoso")
+
+                history.push("/search");
+
             }
         }
     };

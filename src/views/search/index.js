@@ -5,6 +5,8 @@ import img from "../../images/estrellade.png"
 
 import data from "../../data/mun.json";
 import SearchResults from "./components/SearchResults";
+import {useHistory} from "react-router-dom";
+
 
 export default function Search() {
     const [isAtTop, setIsAtTop] = useState(false);
@@ -13,6 +15,7 @@ export default function Search() {
     const [searchData, setSearchData] = useState(data)
     const [results, setResults] = useState([]);
     const [typeData , setTypeData] = useState(true);
+    const history = useHistory();
 
     useEffect(() => {
         const getUser = async () => {
@@ -67,6 +70,9 @@ export default function Search() {
         }
         handleCloseClick();
     };
+    const handleLogOut = () => {
+        history.push("/");
+    }
 
     return (
         <div>
@@ -75,7 +81,7 @@ export default function Search() {
                     { typeData && <button className="btn btn-outline-info" onClick={ hadleClicSearchChange } >Buscar gente</button>  }
                     { !typeData && <button className="btn btn-outline-info" onClick={ hadleClicSearchChange } >Buscar hospitales</button> }
                 </div>
-                <img src={img} className="search-logout"/>
+                <img src={img} className="search-logout" onClick={handleLogOut}/>
             </div>
             <div className={`search ${isAtTop ? "search--top" : "search--center"}`}>
                 <SearchBox onSearch={handleSearchClick} onClose={handleCloseClick} isSearching={isAtTop}/>

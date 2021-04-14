@@ -2,6 +2,7 @@ import {useState} from "react";
 
 import "./style.css";
 
+
 export default function SearchBox({ onSearch, onClose, isSearching }) {
     const [searchText, setSearchText] = useState("");
 
