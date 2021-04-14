@@ -2,6 +2,7 @@ import {useState, useEffect} from "react";
 import "./style.css";
 import data from "../../data/login.json";
 import "bootstrap/dist/css/bootstrap.min.css";
+import avatar from '../../images/avatar.jpg'
 
 export default function Login() {
     const [userLogin, setUsetLogin] = useState(data);
@@ -18,7 +19,6 @@ export default function Login() {
         const searchPassMin = searchPass.toLowerCase();
 
         if (userLogin?.length) {
-            console.log(searchUserMin + " " + searchPassMin);
             const filteredDatauserData = userLogin.filter((value) => {
                 return (
                     value.user.toLowerCase().includes(searchUserMin) &&
@@ -27,8 +27,8 @@ export default function Login() {
             });
             setResults(filteredDatauserData);
             if(results?.length){
-                console.log(filteredDatauserData)
-                // alert("Inicio exitoso")
+                // console.log(filteredDatauserData)
+                alert("Inicio exitoso")
             }
         }
     };
@@ -41,6 +41,7 @@ export default function Login() {
                     <div className="jumbotron">
                         <div className="row">
                             <div className="col-sm-12">
+                                <img className="login-avatar" src={avatar}/>
                                 <div className="col-sm-12">
                                     <label className="control-label"> Nombre de usuario;</label>
                                     <input type="text" name="nombre" className="form-control" value={userUser}

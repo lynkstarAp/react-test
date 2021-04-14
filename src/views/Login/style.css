@@ -4,3 +4,69 @@
     margin-top: 3%;
     display: flex;
 }
+
+.login-container .jumbotron {
+    background-color: #313438ad;
+}
+
+.login-avatar {
+    vertical-align: middle;
+    border-style: none;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    position: absolute;
+    top: -80%;
+    left: calc(50% - 14%);
+}
+.login-container label {
+    margin-bottom: 2%;
+    padding: 0;
+    display: block;
+    font-weight: bold;
+    color: #ffffff;
+}
+.login-container input {
+    width: 100%;
+    margin-bottom: 1%;
+}
+
+.login-container button {
+    border: none;
+    outline: none;
+    height: 100%;
+    background: mediumturquoise;
+    color: #fff;
+    font-size: large;
+    border-radius: 20px;
+}
+
+@media only screen and (max-width: 650px) {
+    .login-container .jumbotron{
+        margin-top: 20%;
+    }
+
+    .login-container button {
+        margin-right: -7%;
+    }
+
+    .login-avatar {
+        top: -75%;
+    }
+}
+@media only screen and (max-width: 715px) {
+    .login-container .jumbotron{
+        margin-top: 10%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .login-container .jumbotron{
+        margin-top: 20%;
+    }
+    .login-avatar {
+        width: 0px;
+        height: 0px;
+        /*top: -75%;*/
+    }
+}
