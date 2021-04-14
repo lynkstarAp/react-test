@@ -5,11 +5,15 @@
     align-items: center;
 }
 
-.search-box-buttons{
+.search-box-buttons {
     display: flex;
     flex-direction: row;
 }
 
-.button-option{
+.button-option {
     margin-left: 1%;
+}
+
+.search-box-title {
+    color: #ffffff;
 }
