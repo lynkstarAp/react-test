@@ -48,6 +48,7 @@ export default function Search() {
                 );
             });
             setResults(filteredDatauserData);
+            console.log(filteredDatauserData);
         }
     };
 

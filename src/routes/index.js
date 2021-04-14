@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Login from "../views/Login";
 import Four0Four from "../views/404";
 import Search from "../views/search";
@@ -6,7 +6,7 @@ import Search from "../views/search";
 export default function Routes() {
     return (
         <Router>
-            <switch>
+            <Switch>
                 <Route path="/" exact>
                     <Login>
 
@@ -19,7 +19,7 @@ export default function Routes() {
                     <Four0Four />
                 </Route>
 
-            </switch>
+            </Switch>
         </Router>
     );
 }
