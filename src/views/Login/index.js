@@ -31,9 +31,9 @@ export default function Login() {
             setResults(filteredDatauserData);
             if(results?.length){
                 alert("Inicio de sesion exitoso")
-
                 history.push("/search");
-
+            } else {
+                alert("Usuario y/o contraseña no validos")
             }
         }
     };
