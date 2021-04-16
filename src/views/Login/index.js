@@ -52,7 +52,7 @@ export default function Login() {
                                     <input type="text" name="nombre" className="form-control" value={userUser}
                                            onChange={({target: {value}}) => setUserUser(value)}/>
                                 </div>
-                                <div className="col-sm-12">
+                                <div className="col-sm-12" style={ { marginTop: "5%" }}>
                                     <label className="control-label">Contraseña;</label>
                                     <input type="password"  name="password"  className="form-control" value={userPass}
                                            onChange={({target: {value}}) => setUserPass(value)} />
